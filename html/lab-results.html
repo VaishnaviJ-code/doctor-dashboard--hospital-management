@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Results - MediCare Doctor Dashboard</title>
+    
+    <!-- CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/lab-results.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MediCare Doctor Dashboard - Lab Results Management System">
+    <meta name="keywords" content="lab results, medical tests, digital reports, patient diagnostics">
+    <meta name="author" content="MediCare Team">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#43a047">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="../img/logo-nobg.png" alt="MediCare">
+            </div>
+            <span class="brand-text">MediCare</span>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="doctor-dashboard.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="appointment.html">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="patient-page.html">
+                        <i class="fas fa-user-injured"></i>
+                        <span>Patients</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="prescriptions.html">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="lab-results.html">
+                        <i class="fas fa-flask"></i>
+                        <span>Lab Results</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#messages">
+                        <i class="fas fa-comments"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#schedule">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Schedule</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#reports">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="doctor-profile.html">
+                        <i class="fas fa-user-md"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search patients, tests, or results..." id="globalSearch">
+                </div>
+            </div>
+            
+            <div class="nav-right">
+                <button class="nav-item-btn" title="Emergency Alerts" id="emergencyBtn">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span class="notification-badge">2</span>
+                </button>
+                
+                <button class="nav-item-btn" title="Messages" id="messagesBtn">
+                    <i class="fas fa-envelope"></i>
+                    <span class="notification-badge">5</span>
+                </button>
+                
+                <button class="nav-item-btn" title="Notifications" id="notificationsBtn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">12</span>
+                </button>
+                
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                
+                <div class="dropdown">
+                    <div class="user-profile" data-bs-toggle="dropdown">
+                        <div class="user-avatar">DR</div>
+                        <div class="user-info">
+                            <h6>Dr. Rajesh Kumar</h6>
+                            <span>Cardiologist</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="doctor-profile.html"><i class="fas fa-user"></i>My Profile</a></li>
+                        <li><a class="dropdown-item" href="#account"><i class="fas fa-user-cog"></i>Account Settings</a></li>
+                        <li><a class="dropdown-item" href="#help"><i class="fas fa-question-circle"></i>Help & Support</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="doctor-login.html"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Lab Results Content -->
+        <div class="lab-results-content">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="header-left">
+                    <h1 class="page-title">Lab Results Management</h1>
+                    <p class="page-subtitle">Review, analyze, and manage patient laboratory test results</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-outline-primary" id="bulkActionsBtn">
+                        <i class="fas fa-tasks"></i> Bulk Actions
+                    </button>
+                    <button class="btn btn-primary" id="exportResultsBtn">
+                        <i class="fas fa-download"></i> Export Results
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-icon total">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3 id="totalResults">342</h3>
+                        <span>Total Results</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon pending">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3 id="pendingResults">15</h3>
+                        <span>Pending Review</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon abnormal">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3 id="abnormalResults">8</h3>
+                        <span>Abnormal Results</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon today">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3 id="todayResults">23</h3>
+                        <span>Today's Results</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="filters-section">
+                <div class="filter-header">
+                    <h5><i class="fas fa-filter"></i> Filter Results</h5>
+                    <button class="btn btn-sm btn-outline-secondary" id="clearFiltersBtn">
+                        <i class="fas fa-times"></i> Clear All
+                    </button>
+                </div>
+                <div class="filter-content">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label class="form-label">Patient Search</label>
+                            <input type="text" class="form-control" id="patientSearch" placeholder="Enter patient name or ID">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Date Range</label>
+                            <input type="date" class="form-control" id="dateFrom">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">&nbsp;</label>
+                            <input type="date" class="form-control" id="dateTo">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Test Type</label>
+                            <select class="form-select" id="testTypeFilter">
+                                <option value="">All Tests</option>
+                                <option value="blood">🩸 Blood Test</option>
+                                <option value="urine">💧 Urine Test</option>
+                                <option value="mri">🧠 MRI Scan</option>
+                                <option value="xray">🦴 X-Ray</option>
+                                <option value="ct">📹 CT Scan</option>
+                                <option value="ecg">❤️ ECG</option>
+                                <option value="ultrasound">👶 Ultrasound</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" id="statusFilter">
+                                <option value="">All Status</option>
+                                <option value="pending">⏳ Pending</option>
+                                <option value="normal">✅ Normal</option>
+                                <option value="abnormal">⚠️ Abnormal</option>
+                                <option value="critical">🚨 Critical</option>
+                            </select>
+                        </div>
+                        <div class="col-md-1">
+                            <label class="form-label">&nbsp;</label>
+                            <button class="btn btn-primary w-100" id="applyFiltersBtn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="results-tabs">
+                <ul class="nav nav-pills" id="resultsTabs">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all-results">
+                            <i class="fas fa-list"></i> All Results <span class="badge bg-primary ms-1">342</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="pending-tab" data-bs-toggle="pill" data-bs-target="#pending-results">
+                            <i class="fas fa-clock"></i> Pending <span class="badge bg-warning ms-1">15</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="abnormal-tab" data-bs-toggle="pill" data-bs-target="#abnormal-results">
+                            <i class="fas fa-exclamation-triangle"></i> Abnormal <span class="badge bg-danger ms-1">8</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="history-tab" data-bs-toggle="pill" data-bs-target="#history-results">
+                            <i class="fas fa-history"></i> History
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="resultsTabContent">
+                <!-- All Results Tab -->
+                <div class="tab-pane fade show active" id="all-results">
+                    <div class="results-container">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <h5>Laboratory Results</h5>
+                                    <span class="results-count">Showing <span id="currentCount">50</span> of <span id="totalCount">342</span> results</span>
+                                </div>
+                                <div class="header-actions">
+                                    <div class="view-toggle">
+                                        <button class="btn btn-sm btn-outline-primary active" id="tableViewBtn">
+                                            <i class="fas fa-table"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-primary" id="cardViewBtn">
+                                            <i class="fas fa-th-large"></i>
+                                        </button>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary" id="refreshResultsBtn">
+                                        <i class="fas fa-sync-alt"></i> Refresh
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Bulk Selection Header -->
+                                <div class="bulk-selection-header" id="bulkSelectionHeader" style="display: none;">
+                                    <div class="selection-info">
+                                        <span id="selectedCount">0</span> results selected
+                                    </div>
+                                    <div class="bulk-actions">
+                                        <button class="btn btn-sm btn-success" id="bulkApproveBtn">
+                                            <i class="fas fa-check"></i> Approve Selected
+                                        </button>
+                                        <button class="btn btn-sm btn-info" id="bulkNotifyBtn">
+                                            <i class="fas fa-paper-plane"></i> Notify Patients
+                                        </button>
+                                        <button class="btn btn-sm btn-secondary" id="bulkExportBtn">
+                                            <i class="fas fa-download"></i> Export Selected
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Table View -->
+                                <div class="table-view" id="tableView">
+                                    <div class="table-responsive">
+                                        <table class="table results-table" id="resultsTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <input type="checkbox" class="form-check-input" id="selectAllCheckbox">
+                                                    </th>
+                                                    <th>Patient</th>
+                                                    <th>Test Type</th>
+                                                    <th>Date Ordered</th>
+                                                    <th>Date Completed</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="resultsTableBody">
+                                                <!-- Results will be populated here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Card View -->
+                                <div class="card-view" id="cardView" style="display: none;">
+                                    <div class="results-grid" id="resultsGrid">
+                                        <!-- Result cards will be populated here -->
+                                    </div>
+                                </div>
+
+                                <!-- Pagination -->
+                                <div class="pagination-container">
+                                    <div class="pagination-info">
+                                        Showing 1-50 of 342 results
+                                    </div>
+                                    <nav aria-label="Results pagination">
+                                        <ul class="pagination" id="resultsPagination">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">1</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other tabs content would be similar -->
+                <div class="tab-pane fade" id="pending-results">
+                    <div class="results-container">
+                        <div class="content-card">
+                            <div class="card-body">
+                                <div class="empty-state">
+                                    <i class="fas fa-clock"></i>
+                                    <h4>Pending Results</h4>
+                                    <p>Results awaiting your review will appear here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="abnormal-results">
+                    <div class="results-container">
+                        <div class="content-card">
+                            <div class="card-body">
+                                <div class="empty-state">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <h4>Abnormal Results</h4>
+                                    <p>Results that require attention will appear here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="history-results">
+                    <div class="results-container">
+                        <div class="content-card">
+                            <div class="card-body">
+                                <div class="empty-state">
+                                    <i class="fas fa-history"></i>
+                                    <h4>Results History</h4>
+                                    <p>Historical test results and trends will appear here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Result Detail Modal -->
+    <div class="modal fade" id="resultDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalTitle">Lab Result Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Patient Info Header -->
+                    <div class="patient-header">
+                        <div class="patient-avatar">
+                            <span id="patientInitials">JS</span>
+                        </div>
+                        <div class="patient-info">
+                            <h6 id="patientName">John Smith</h6>
+                            <span id="patientDetails">ID: P001 | Age: 45 | Male</span>
+                        </div>
+                        <div class="test-status">
+                            <span class="badge" id="testStatusBadge">Normal</span>
+                        </div>
+                    </div>
+
+                    <!-- Test Information -->
+                    <div class="test-information">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Test Information</h6>
+                                <div class="info-item">
+                                    <label>Test Name:</label>
+                                    <span id="testName">Complete Blood Count (CBC)</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Test Type:</label>
+                                    <span id="testType">Blood Test</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Ordered by:</label>
+                                    <span id="orderedBy">Dr. Rajesh Kumar</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Timeline</h6>
+                                <div class="info-item">
+                                    <label>Date Ordered:</label>
+                                    <span id="dateOrdered">2024-01-15</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Date Completed:</label>
+                                    <span id="dateCompleted">2024-01-16</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Lab:</label>
+                                    <span id="labName">Central Lab</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Values -->
+                    <div class="result-values">
+                        <h6>Test Results</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Result</th>
+                                        <th>Normal Range</th>
+                                        <th>Unit</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resultValuesTable">
+                                    <!-- Result values will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Trend Chart -->
+                    <div class="trend-chart" id="trendChartContainer">
+                        <h6>Trend Analysis</h6>
+                        <div class="chart-placeholder">
+                            <canvas id="trendChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Attachments -->
+                    <div class="attachments" id="attachmentsContainer">
+                        <h6>Attachments</h6>
+                        <div class="attachment-list" id="attachmentList">
+                            <!-- Attachments will be populated here -->
+                        </div>
+                    </div>
+
+                    <!-- Doctor's Notes -->
+                    <div class="doctor-notes">
+                        <h6>Doctor's Notes</h6>
+                        <textarea class="form-control" id="doctorNotes" rows="4" placeholder="Add your notes about this result..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-primary" id="printResultBtn">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                    <button type="button" class="btn btn-outline-info" id="shareResultBtn">
+                        <i class="fas fa-share"></i> Share with Patient
+                    </button>
+                    <button type="button" class="btn btn-success" id="approveResultBtn">
+                        <i class="fas fa-check"></i> Approve & Sign
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="loading-text">Loading lab results...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/lab-results.js"></script>
+</body>
+</html>

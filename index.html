@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hero-section.css">
+    <link rel="stylesheet" href="css/about-us-carousel.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/chief-doctors.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MediCare - Trusted healthcare services with expert doctors, modern facilities, and 24/7 support.">
+    <meta name="keywords" content="hospital, medicare, healthcare, doctors, clinics, medical services, emergency care">
+    <meta name="author" content="MediCare Team">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#43a047">
+
+    <!-- Social Preview -->
+    <meta property="og:title" content="MediCare - Your Health, Our Priority">
+    <meta property="og:description" content="Compassionate care with modern technology. Book appointments online and meet our expert doctors.">
+    <meta property="og:image" content="https://yourdomain.com/img/preview.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>MediCare</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+          <img src="img/logo-nobg.png" alt="" width="30">
+          MediCare
+        </a>
+          
+        <!-- Mobile Hamburger -->
+        <div class="d-flex d-lg-none align-items-center gap-3">
+          <button class="border-0 bg-transparent" id="openMenu">
+            <i class="fas fa-bars fs-3 text-success" id="hamburgerIcon"></i>
+          </button>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="d-none d-lg-flex gap-4 align-items-center" id="navbarNav">
+          <ul class="navbar-nav d-flex flex-row gap-3 mb-0">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            
+            <!-- About Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#about" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About Us
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="#about"><i class="fas fa-info-circle"></i>About MediCare</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#mission-vision"><i class="fas fa-bullseye"></i>Mission & Vision</a></li>
+                <li><a class="dropdown-item" href="#timeline"><i class="fas fa-history"></i>Our Journey</a></li>
+              </ul>
+            </li>
+            
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#doctors">Our Chief Doctors</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          
+          <!-- Light/Dark Mode Toggle -->
+          <div class="toggle-switch">
+            <i class="fas fa-sun"></i>
+            <label class="switch">
+              <input type="checkbox" id="modeToggle">
+              <span class="slider"></span>
+            </label>
+            <i class="fas fa-moon"></i>
+          </div>
+          <a href="html/doctor-login.html"><button type="button" class="btn btn-success">Login</button></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Fullscreen Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="position-absolute top-0 end-0 p-4">
+        <button class="border-0 bg-transparent" id="closeMenu">
+          <i class="fas fa-times fs-3 text-danger"></i>
+        </button>
+      </div>
+      <ul class="nav flex-column align-items-center gap-4 fs-4 mt-5">
+        <li class="nav-item"><a class="nav-link text-success" href="#hero">Home</a></li>
+        
+        <!-- Mobile About Us Dropdown -->
+        <li class="nav-item">
+          <a class="nav-link text-success" href="#about" id="mobileAboutToggle">About Us</a>
+          <div class="mobile-dropdown" id="mobileDropdown" style="display: none;">
+            <a class="mobile-dropdown-item" href="#mission-vision">
+              <i class="fas fa-bullseye"></i>Mission & Vision
+            </a>
+            <a class="mobile-dropdown-item" href="#timeline">
+              <i class="fas fa-history"></i>Our Journey
+            </a>
+          </div>
+        </li>
+        
+        <li class="nav-item"><a class="nav-link text-success" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link text-success" href="#doctors">Our Chief Doctors</a></li>
+        <li class="nav-item"><a class="nav-link text-success" href="#contact">Contact</a></li>
+        <li><a href="html/doctor-login.html"><button class="btn btn-success">Login</button></a></li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-background"></div>
+      <div class="hero-overlay"></div>
+      
+      <div class="container position-relative">
+        <div class="row min-vh-100 align-items-center justify-content-center">
+          <div class="col-lg-8 col-md-10 col-12 text-center">
+            <h1 class="hero-title mb-4">
+              Caring for Life, <span class="text-accent">Every Step of the Way</span>
+            </h1>
+            
+            <p class="hero-subtitle mb-4">
+              Experience compassionate healthcare with our dedicated team of medical professionals.
+            </p>
+            
+            <!-- Features Pills -->
+            <div class="hero-features mb-5">
+              <span class="feature-pill">
+                <i class="fas fa-clock me-2"></i>24/7 Emergency Care
+              </span>
+              <span class="feature-pill">
+                <i class="fas fa-user-md me-2"></i>Expert Specialists
+              </span>
+              <span class="feature-pill">
+                <i class="fas fa-heart me-2"></i>Compassionate Care
+              </span>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="hero-cta">
+              <button class="btn btn-primary btn-cta me-3 mb-3">
+                <i class="fas fa-calendar-plus me-2"></i>Book Appointment
+              </button>
+              <button class="btn btn-outline-light btn-cta mb-3">
+                <i class="fas fa-phone me-2"></i>Emergency: 911
+              </button>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="trust-indicators mt-5">
+              <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                  <div class="trust-item">
+                    <h3 class="trust-number">15K+</h3>
+                    <p class="trust-label">Happy Patients</p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="trust-item">
+                    <h3 class="trust-number">50+</h3>
+                    <p class="trust-label">Expert Doctors</p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="trust-item">
+                    <h3 class="trust-number">25+</h3>
+                    <p class="trust-label">Years Experience</p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="trust-item">
+                    <h3 class="trust-number">99%</h3>
+                    <p class="trust-label">Success Rate</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Elements -->
+      <div class="floating-elements">
+        <div class="floating-icon floating-1">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="floating-icon floating-2">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="floating-icon floating-3">
+          <i class="fas fa-user-nurse"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <div class="section-header">
+              <span class="section-badge">About MediCare</span>
+              <h2 class="section-title">Our Story of Care & Excellence</h2>
+              <p class="section-subtitle">For over 25 years, we've been dedicated to providing exceptional healthcare services with compassion, innovation, and unwavering commitment to our patients' wellbeing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mission & Vision Cards -->
+        <div class="row mb-5 g-4" id="mission-vision">
+          <div class="col-md-6">
+            <div class="mission-card">
+              <div class="card-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3>Our Mission</h3>
+              <p>To deliver comprehensive, patient-centered healthcare services that promote healing, wellness, and quality of life for every individual we serve, while advancing medical excellence through continuous innovation and compassionate care.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mission-card">
+              <div class="card-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3>Our Vision</h3>
+              <p>To be the leading healthcare provider in our region, recognized for medical excellence, innovative treatments, and exceptional patient experiences that set the standard for compassionate, quality healthcare delivery.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-section mb-5" id="timeline">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <h3 class="timeline-title text-center mb-4">Our Journey Through Time</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-year">1998</div>
+                  <div class="timeline-content">
+                    <div class="timeline-image">
+                      <img src="../img/90s-hospital.jpg" alt="Hospital foundation in 1998">
+                    </div>
+                    <div class="timeline-text">
+                      <h4>Foundation</h4>
+                      <p>MediCare was founded with a vision to provide accessible, quality healthcare to our community. Started with 20 beds and 15 dedicated staff members.</p>
+                      <div class="timeline-highlight">
+                        <small>Milestone: First 1,000 patients treated</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-year">2005</div>
+                  <div class="timeline-content">
+                    <div class="timeline-image">
+                      <img src="../img/cardiology.jpg" alt="Hospital expansion in 2005">
+                    </div>
+                    <div class="timeline-text">
+                      <h4>First Expansion</h4>
+                      <p>Added cardiac care unit and expanded to 100 beds. Introduced advanced diagnostic equipment and specialized treatment facilities.</p>
+                      <div class="timeline-highlight">
+                        <small>Achievement: JCI Accreditation Received</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-year">2012</div>
+                  <div class="timeline-content">
+                    <div class="timeline-image">
+                      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=300&fit=crop&crop=center" alt="Technology integration in 2012">
+                    </div>
+                    <div class="timeline-text">
+                      <h4>Technology Integration</h4>
+                      <p>Implemented electronic health records and telemedicine services. Became the first hospital in the region to offer robotic surgery.</p>
+                      <div class="timeline-highlight">
+                        <small>Innovation: First Robotic Surgery Performed</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-year">2018</div>
+                  <div class="timeline-content">
+                    <div class="timeline-image">
+                      <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=500&h=300&fit=crop&crop=center" alt="Community programs launched in 2018">
+                    </div>
+                    <div class="timeline-text">
+                      <h4>Community Programs</h4>
+                      <p>Launched free health screening programs and mobile clinic services. Established partnerships with local schools for health education.</p>
+                      <div class="timeline-highlight">
+                        <small>Impact: 10,000+ free screenings conducted</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-year">2023</div>
+                  <div class="timeline-content">
+                    <div class="timeline-image">
+                      <img src="../img/group-doctors.jpg" alt="Modern excellence in 2023">
+                    </div>
+                    <div class="timeline-text">
+                      <h4>Modern Excellence</h4>
+                      <p>Achieved Joint Commission accreditation and expanded to 200 beds. Now serving over 50,000 patients annually with 150+ medical professionals.</p>
+                      <div class="timeline-highlight">
+                        <small>Recognition: Regional Healthcare Excellence Award</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <span class="section-badge">Our Services</span>
+            <h2 class="section-title">Comprehensive Healthcare Services</h2>
+            <p class="section-subtitle">From emergency care to specialized treatments, we offer a complete range of medical services designed to meet all your healthcare needs with excellence and compassion.</p>
+          </div>
+        </div>
+
+        <!-- Services Carousel -->
+        <div id="servicesCarousel" class="carousel slide services-carousel" data-bs-ride="carousel" data-bs-interval="4000">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="5"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <!-- Emergency Care -->
+            <div class="carousel-item active">
+              <div class="service-slide">
+                <img src="../img/emergency-care.jpg" alt="Emergency Care" class="service-image">
+                <div class="service-content">
+                  <div class="service-stats">
+                    <div class="stat-number">24/7</div>
+                    <p class="stat-label">Available</p>
+                  </div>
+                  <div class="service-info">
+                    <h3>Emergency Care</h3>
+                    <p>Round-the-clock emergency medical services with state-of-the-art trauma center and expert emergency physicians ready to handle any critical situation.</p>
+                    <div class="service-features">
+                      <span class="feature-tag">Trauma Center</span>
+                      <span class="feature-tag">Ambulance Service</span>
+                      <span class="feature-tag">Critical Care</span>
+                      <span class="feature-tag">Life Support</span>
+                    </div>
+                    <a href="#contact" class="service-btn">Emergency Hotline</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cardiology -->
+            <div class="carousel-item">
+              <div class="service-slide">
+                <img src="img/heart.jpg" alt="Cardiology" class="service-image">
+                <div class="service-content">
+                  <div class="service-stats">
+                    <div class="stat-number">98%</div>
+                    <p class="stat-label">Success Rate</p>
+                  </div>
+                  <div class="service-info">
+                    <h3>Cardiology</h3>
+                    <p>Complete heart care services including preventive cardiology, interventional procedures, and cardiac surgery with cutting-edge technology and experienced cardiologists.</p>
+                    <div class="service-features">
+                      <span class="feature-tag">Heart Surgery</span>
+                      <span class="feature-tag">Cardiac Cath Lab</span>
+                      <span class="feature-tag">ECG & Echo</span>
+                      <span class="feature-tag">Pacemaker</span>
+                    </div>
+                    <a href="#contact" class="service-btn">Book Consultation</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Neurology -->
+            <div class="carousel-item">
+              <div class="service-slide">
+                <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1200&h=500&fit=crop" alt="Neurology" class="service-image">
+                <div class="service-content">
+                  <div class="service-stats">
+                    <div class="stat-number">15+</div>
+                    <p class="stat-label">Specialists</p>
+                  </div>
+                  <div class="service-info">
+                    <h3>Neurology & Neurosurgery</h3>
+                    <p>Advanced neurological care covering brain and spine disorders, stroke treatment, and minimally invasive neurosurgical procedures with latest imaging technology.</p>
+                    <div class="service-features">
+                      <span class="feature-tag">Brain Surgery</span>
+                      <span class="feature-tag">Stroke Care</span>
+                      <span class="feature-tag">MRI & CT Scan</span>
+                      <span class="feature-tag">Epilepsy Center</span>
+                    </div>
+                    <a href="#contact" class="service-btn">Schedule Appointment</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orthopedics -->
+            <div class="carousel-item">
+              <div class="service-slide">
+                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1200&h=500&fit=crop" alt="Orthopedics" class="service-image">
+                <div class="service-content">
+                  <div class="service-stats">
+                    <div class="stat-number">500+</div>
+                    <p class="stat-label">Surgeries/Year</p>
+                  </div>
+                  <div class="service-info">
+                    <h3>Orthopedics</h3>
+                    <p>Comprehensive bone and joint care including joint replacement, sports medicine, trauma surgery, and rehabilitation services with advanced surgical techniques.</p>
+                    <div class="service-features">
+                      <span class="feature-tag">Joint Replacement</span>
+                      <span class="feature-tag">Sports Medicine</span>
+                      <span class="feature-tag">Arthroscopy</span>
+                      <span class="feature-tag">Physiotherapy</span>
+                    </div>
+                    <a href="#contact" class="service-btn">Get Treatment</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Maternity -->
+            <div class="carousel-item">
+              <div class="service-slide">
+                <img src="img/maternity.jpg" alt="Maternity Care" class="service-image">
+                <div class="service-content">
+                  <div class="service-stats">
+                    <div class="stat-number">2000+</div>
+                    <p class="stat-label">Babies Born</p>
+                  </div>
+                  <div class="service-info">
+                    <h3>Maternity & Women's Health</h3>
+                    <p>Complete women's healthcare services from prenatal care to delivery and postnatal support, with modern birthing suites and expert gynecologists.</p>
+                    <div class="service-features">
+                      <span class="feature-tag">Prenatal Care</span>
+                      <span class="feature-tag">Natural Birth</span>
+                      <span class="feature-tag">C-Section</span>
+                      <span class="feature-tag">NICU</span>
+                    </div>
+                    <a href="#contact" class="service-btn">Prenatal Booking</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pediatrics -->
+            <div class="carousel-item">
+              <div class="service-slide">
+                <img src="img/pediatrics.jpg" alt="Pediatrics" class="service-image">
+                <div class="service-content">
+                  <div class="service-stats">
+                    <div class="stat-number">10+</div>
+                    <p class="stat-label">Pediatricians</p>
+                  </div>
+                  <div class="service-info">
+                    <h3>Pediatrics & Child Care</h3>
+                    <p>Specialized medical care for infants, children, and adolescents with child-friendly environment, vaccination programs, and developmental assessments.</p>
+                    <div class="service-features">
+                      <span class="feature-tag">Vaccinations</span>
+                      <span class="feature-tag">Growth Monitoring</span>
+                      <span class="feature-tag">Pediatric Surgery</span>
+                      <span class="feature-tag">Child Psychology</span>
+                    </div>
+                    <a href="#contact" class="service-btn">Child Checkup</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chief Doctors Section -->
+    <section class="doctors-section" id="doctors">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <span class="section-badge">Meet Our Leaders</span>
+            <h2 class="section-title">Our Chief Doctors</h2>
+            <p class="section-subtitle">Meet the exceptional medical professionals who lead our healthcare teams with expertise, compassion, and dedication to providing the highest quality patient care.</p>
+          </div>
+        </div>
+
+        <!-- Doctors Grid -->
+        <div class="row g-4 mb-5">
+          <!-- Chief Medical Officer -->
+          <div class="col-lg-4 col-md-6">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop&crop=face" alt="Dr. Sarah Mitchell" class="doctor-image">
+              </div>
+              <div class="doctor-info">
+                <h3 class="doctor-name">Dr. Vinayak Nair</h3>
+                <p class="doctor-specialty">Chief Medical Officer</p>
+                <p class="doctor-credentials">MD, MBA • Harvard Medical School<br>Board Certified Internal Medicine</p>
+                <span class="doctor-experience">25+ Years Experience</span>
+                <div class="specializations">
+                  <span class="specialization-tag">Internal Medicine</span>
+                  <span class="specialization-tag">Healthcare Administration</span>
+                  <span class="specialization-tag">Quality Improvement</span>
+                </div>
+              </div>
+              
+              <div class="quote-bubble">
+                <p class="quote-text">Excellence in healthcare isn't just about advanced technology—it's about combining medical expertise with genuine compassion for every patient who walks through our doors.</p>
+              </div>
+
+              <div class="doctor-stats">
+                <div class="stat-item">
+                  <div class="stat-number">15K+</div>
+                  <p class="stat-label">Patients Treated</p>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <p class="stat-label">Patient Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">25+</div>
+                  <p class="stat-label">Years Experience</p>
+                </div>
+              </div>
+
+              <div class="doctor-contact">
+                <a href="#contact" class="contact-btn">
+                  <i class="fas fa-calendar-plus me-2"></i>Book Consultation
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chief of Cardiology -->
+          <div class="col-lg-4 col-md-6">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face" alt="Dr. Michael Chen" class="doctor-image">
+              </div>
+              <div class="doctor-info">
+                <h3 class="doctor-name">Dr. Anupama V Madhavan</h3>
+                <p class="doctor-specialty">Chief of Cardiology</p>
+                <p class="doctor-credentials">MD, PhD • Stanford University<br>Board Certified Cardiology & Interventional Cardiology</p>
+                <span class="doctor-experience">20+ Years Experience</span>
+                <div class="specializations">
+                  <span class="specialization-tag">Interventional Cardiology</span>
+                  <span class="specialization-tag">Heart Surgery</span>
+                  <span class="specialization-tag">Research</span>
+                </div>
+              </div>
+              
+              <div class="quote-bubble">
+                <p class="quote-text">Every heartbeat matters. My commitment is to provide cutting-edge cardiac care while treating each patient as if they were my own family member.</p>
+              </div>
+
+              <div class="doctor-stats">
+                <div class="stat-item">
+                  <div class="stat-number">3.5K+</div>
+                  <p class="stat-label">Procedures</p>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">99%</div>
+                  <p class="stat-label">Success Rate</p>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">50+</div>
+                  <p class="stat-label">Publications</p>
+                </div>
+              </div>
+
+              <div class="doctor-contact">
+                <a href="#contact" class="contact-btn">
+                  <i class="fas fa-heart me-2"></i>Cardiac Consultation
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chief of Surgery -->
+          <div class="col-lg-4 col-md-6">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&crop=face" alt="Dr. Emily Rodriguez" class="doctor-image">
+              </div>
+              <div class="doctor-info">
+                <h3 class="doctor-name">Dr. Gokul Jayakumar</h3>
+                <p class="doctor-specialty">Chief of Surgery</p>
+                <p class="doctor-credentials">MD • Johns Hopkins University<br>Board Certified General Surgery & Minimally Invasive Surgery</p>
+                <span class="doctor-experience">18+ Years Experience</span>
+                <div class="specializations">
+                  <span class="specialization-tag">Minimally Invasive Surgery</span>
+                  <span class="specialization-tag">Robotic Surgery</span>
+                  <span class="specialization-tag">Trauma Surgery</span>
+                </div>
+              </div>
+              
+              <div class="quote-bubble">
+                <p class="quote-text">Precision, innovation, and patient safety guide every procedure. I believe in healing through the most advanced techniques combined with personalized care.</p>
+              </div>
+
+              <div class="doctor-stats">
+                <div class="stat-item">
+                  <div class="stat-number">2.8K+</div>
+                  <p class="stat-label">Surgeries</p>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">97%</div>
+                  <p class="stat-label">Success Rate</p>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">18+</div>
+                  <p class="stat-label">Years Experience</p>
+                </div>
+              </div>
+
+              <div class="doctor-contact">
+                <a href="#contact" class="contact-btn">
+                  <i class="fas fa-user-md me-2"></i>Surgical Consultation
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <span class="section-badge">Get In Touch</span>
+            <h2 class="section-title">Contact MediCare</h2>
+            <p class="section-subtitle">We're here to help you 24/7. Reach out to us for appointments, emergencies, or any healthcare inquiries. Your health is our priority.</p>
+          </div>
+        </div>
+
+        <!-- Contact Info Cards -->
+        <div class="contact-cards">
+          <div class="row g-4">
+            <!-- Emergency Contact -->
+            <div class="col-lg-4 col-md-6">
+              <div class="contact-info-card">
+                <div class="emergency-badge">24/7 EMERGENCY</div>
+                <div class="contact-icon">
+                  <i class="fas fa-ambulance"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Emergency Services</h4>
+                  <div class="contact-detail-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:911">911</a>
+                  </div>
+                  <div class="contact-detail-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+1234567890">+1 (234) 567-8900</a>
+                  </div>
+                  <div class="contact-detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Available 24/7</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- General Contact -->
+            <div class="col-lg-4 col-md-6">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-hospital"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>General Information</h4>
+                  <div class="contact-detail-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+1234567890">+1 (234) 567-8900</a>
+                  </div>
+                  <div class="contact-detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@medicare.com">info@medicare.com</a>
+                  </div>
+                  <div class="contact-detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon-Fri: 8AM-6PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="col-lg-4 col-md-6">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Our Location</h4>
+                  <div class="contact-detail-item">
+                    <i class="fas fa-map-pin"></i>
+                    <span>123 Healthcare Ave<br>Medical District, Thiruvananthapuram</span>
+                  </div>
+                  <div class="contact-detail-item">
+                    <i class="fas fa-car"></i>
+                    <span>Free Parking Available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form and Additional Info -->
+        <div class="row g-4">
+          <!-- Contact Form -->
+          <div class="col-lg-8">
+            <div class="contact-form-container">
+              <h3 class="mb-4 text-center">Send Us a Message</h3>
+              <form class="contact-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="firstName" class="form-label">First Name</label>
+                      <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="lastName" class="form-label">Last Name</label>
+                      <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone" class="form-label">Phone Number</label>
+                      <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="department" class="form-label">Department</label>
+                  <select class="form-select" id="department" required>
+                    <option value="">Select a department</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="emergency">Emergency Services</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="neurology">Neurology & Neurosurgery</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="maternity">Maternity & Women's Health</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="billing">Billing & Insurance</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input type="text" class="form-control" id="subject" placeholder="Brief subject of your message" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="Please describe your inquiry or concern in detail..." required></textarea>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Social Media & Map -->
+          <div class="col-lg-4">
+            <!-- Social Media -->
+            <div class="social-media-section">
+              <h4 class="social-title">Connect With Us</h4>
+              <p class="social-subtitle">Follow us on social media for health tips and updates</p>
+              <div class="social-links">
+                <a href="#" class="social-link social-facebook" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link social-twitter" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link social-instagram" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link social-linkedin" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link social-youtube" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/1234567890" class="social-link social-whatsapp" aria-label="WhatsApp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container">
+              <h4 class="map-title">Find Us</h4>
+              <div class="map-placeholder">
+                <div>
+                  <i class="fas fa-map-marker-alt fs-3 mb-2"></i><br>
+                  Interactive Map Coming Soon
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
