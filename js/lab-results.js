@@ -1297,3 +1297,44 @@ window.viewAttachment = function(filename) {
 };
 
 console.log('✅ Lab Results page JavaScript loaded successfully!');
+
+// Add this to ALL your page JavaScript files
+// Listen for theme changes from other pages
+window.addEventListener('storage', function(e) {
+    if (e.key === 'medicare-doctor-theme') {
+        console.log('🌍 Theme changed in another tab/page:', e.newValue);
+        
+        // Apply the new theme immediately
+        const newTheme = e.newValue || 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        
+        // Update theme icon if it exists
+        const themeIcon = document.getElementById('themeIcon');
+        if (themeIcon) {
+            themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        
+        // Force sidebar theme consistency
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            const navLinks = sidebar.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (newTheme === 'dark') {
+                    if (link.classList.contains('active')) {
+                        link.style.color = '#4dd0e1';
+                    } else {
+                        link.style.color = '#b0bec5';
+                    }
+                } else {
+                    if (link.classList.contains('active')) {
+                        link.style.color = '#43a047';
+                    } else {
+                        link.style.color = '#7f8c8d';
+                    }
+                }
+            });
+        }
+        
+        console.log('✅ Theme synchronized across pages');
+    }
+});
